@@ -1,0 +1,35 @@
+@import "../../../styles/resources.scss";
+
+form {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  input {
+    min-width: 210px;
+    font-size: 16px;
+    margin: 2px 2px 2px 8px;
+    height: 20px;
+    padding: 8px;
+  }
+
+  button {
+    font-size: 16px;
+    background-color: $color-green;
+    color: $color-white;
+    padding: 4px 8px;
+    height: 38px;
+    border-radius: 4px;
+    min-width: 72px;
+    margin-right: 8px;
+
+    svg > path {
+      stroke: $color-white;
+      margin-right: 2px;
+    }
+  }
+}
+
+.disabled {
+  background-color: $color-light-green;
+}
