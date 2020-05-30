@@ -1,0 +1,17 @@
+$font-family: Helvetica, Arial, sans-serif;
+
+@mixin font-defaults {
+  font-family: $font-family;
+}
+
+@mixin heading {
+  @include font-defaults;
+
+  font-size: 16px;
+
+  h1 {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 16px;
+  }
+}

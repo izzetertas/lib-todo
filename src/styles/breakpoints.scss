@@ -1,0 +1,13 @@
+$breakpoints: (
+  sm: 0,      // 0px+    == mobile
+  md: 601px,  // 601px+  == tablet
+  lg: 881px,  // 881px+  == desktop
+  xl: 1264px  // 1264px+ == widescreen
+) !default;
+
+$breakpoints-max: (
+  sm: map-get($breakpoints, 'md') - 1,
+  md: map-get($breakpoints, 'lg') - 1,
+  lg: map-get($breakpoints, 'xl') - 1,
+  xl: 0
+);
