@@ -11,7 +11,7 @@ import './TodoEntryForm.scss'
 const TodoEntryForm: React.FC<TodoEntryFormProps> = (props) => {
   const [inputValue, setInputValue] = useState<string>('')
   
-  let placeHolderMsg = '...'
+  let placeHolderMsg = ''
   try {
     const intl = useIntl()
     placeHolderMsg = intl.formatMessage({ id: 'todoList.entryForm.inputPlaceholder' })
