@@ -13,6 +13,7 @@ import './TodoList.scss'
 const TodoList: React.FC<TodoListProps> = (props) => {
 
   const handleOnSubmit = (text) => {
+    console.log('handleOnSubmit ==>', text);
     const newItem = {
       id: uuidv4(),
       text,

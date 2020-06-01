@@ -32,6 +32,7 @@ const TodoEntryForm: React.FC<TodoEntryFormProps> = (props) => {
   return (
     <form noValidate>
       <input
+        data-testid='todoEntry-input'
         type='text'
         value={inputValue}
         onChange={handleChange}
@@ -39,6 +40,7 @@ const TodoEntryForm: React.FC<TodoEntryFormProps> = (props) => {
         disabled={props.addTodoInProgress}
       />
       <button
+        data-testid='todoEntry-add-btn'
         type='submit'
         onClick={handleSubmit}
         className={props.addTodoInProgress ? 'disabled' : null }

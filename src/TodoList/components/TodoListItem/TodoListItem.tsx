@@ -28,6 +28,7 @@ const TodoListItem: React.FC<TodoListItemProps> = (props) => {
       }
       <label>
         <input
+          data-testid={`item_${props.id}`}
           type='checkbox'
           onChange={() => props.onClick({
            id: props.id,
