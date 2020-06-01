@@ -1,6 +1,7 @@
 @import '../../../styles/resources.scss';
 
 .todo-list-item {
+  position: relative;
   margin: 8px;
   border: 1px solid $color-grey;
   border-radius: 2px;
@@ -13,6 +14,17 @@
 
   &-done {
     border-color: #aabdaa;
+  }
+
+  &-loading {
+    position: absolute;
+    left:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255,255,255,.5);
+    height: 40px;
+    width: 100%;
   }
 
   label {

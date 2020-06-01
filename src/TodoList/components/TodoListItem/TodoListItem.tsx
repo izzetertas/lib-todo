@@ -1,22 +1,11 @@
 import React from 'react'
 import classNames from 'classnames'
 import { MdDelete } from 'react-icons/md'
+import ClipLoader from 'react-spinners/ClipLoader'
+
+import { TodoListItemProps } from './TodoListItem.types'
 
 import './TodoListItem.scss'
-
-export interface TodoListItem {
-  id: string,
-  text: string,
-  done: boolean
-}
-
-export interface TodoListItemProps {
-  id: string,
-  text: string,
-  done: boolean,
-  onClick: (item: TodoListItem) => void
-  onRemove: (id: string) => void
-}
 
 const TodoListItem: React.FC<TodoListItemProps> = (props) => {
   const handleRemove = () => {
@@ -32,6 +21,11 @@ const TodoListItem: React.FC<TodoListItemProps> = (props) => {
 
   return (
     <li className={wrapperClasses}>
+      {props.inProgress &&
+        <div className='todo-list-item-loading'>
+          <ClipLoader size={20} color={'#A2AFAD'} loading />
+        </div>
+      }
       <label>
         <input
           type='checkbox'

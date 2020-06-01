@@ -14,7 +14,7 @@ const todoItems = [{
 },{
   id: '2',
   text: 'Second task',
-  done: true
+  done: true,
 },{
   id: '3',
   text: 'Third task',
@@ -57,13 +57,20 @@ export const Default = () => {
          case TodoListAction.Update:
           setItems(items.map((item) => {
             if(item.id === updatedItem.id) {
-              return updatedItem
+              return {...updatedItem, inProgress: true }
             }
             return item
           }))
           break
       case TodoListAction.Delete:
-        setItems(items.filter(({ id }) => id !== updatedItem.id))
+        setItems(items.map((item) => {
+          if(item.id === updatedItem.id) {
+            return {...updatedItem, inProgress: true }
+          }
+          return item
+        }))
+        setTimeout(() => setItems(items.filter(({ id }) => id !== updatedItem.id)), 2000)
+        
         break
     }
   }
