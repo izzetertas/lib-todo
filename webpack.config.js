@@ -1,7 +1,6 @@
 const path = require('path')
 const webpack = require('webpack')
 const { CheckerPlugin } = require('awesome-typescript-loader')
-const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 const PATHS = {
   src: path.join(__dirname, './src'),
@@ -64,13 +63,5 @@ module.exports = {
   plugins: [
     new CheckerPlugin(),
     new webpack.IgnorePlugin(/test\.ts$/),
-    new CopyWebpackPlugin({
-      patterns: [
-        {
-          from: path.resolve('./package.json'),
-          to: '.',
-        }
-      ]
-    }),
   ]
 }
